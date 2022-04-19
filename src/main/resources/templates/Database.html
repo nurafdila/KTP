@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Database</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>DataBase ktp indonesia</div>
+         <a href="viewdatamodal" class="Adddata" title="Adddata">Adddata</a>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>"NIK"</th>
+                    <th>"Nama"</th>
+                    <th>"Tanggal Lahir"</th>
+                    <th>"Actions"</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="ktpData:${goData}">
+                    <td th:teks="${ktpData.noktp}"></td>
+                    <td th:teks="${ktpData.nama}"></td>
+                    <td th:text="${#dates.format(ktpData.tgllahir,'dd MMM yyyy')}"></td>
+                    <td th:text="${ktpData.alamat}"></td>
+                    <td>
+                        <a href="viewdatamodal" class="view" title="View" data-toggle="modal">view</a>
+                        
+                        <a href="viewdatamodal" class="edit" title="edit" data-toggle="modal">edit</a>
+                        <a href="viewdatamodal" class="delete" title="delete" data-toggle="modal">delete</a>
+                                                                                                 
+                                                                                                 
+                                                                                                 
+                    </td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </body>
+</html>
